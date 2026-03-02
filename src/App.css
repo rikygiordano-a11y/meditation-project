@@ -1,0 +1,247 @@
+
+
+:root {
+  --bg: #0b1024;
+  --text: #e2e8f0;
+  --muted: rgba(226, 232, 240, 0.85);
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(226, 232, 240, 0.14);
+  --panel: rgba(2, 6, 23, 0.45);
+  --primary: rgba(56, 189, 248, 0.92);
+  --shadow: rgba(0, 0, 0, 0.38);
+  --successBg: rgba(34, 197, 94, 0.12);
+  --successBorder: rgba(34, 197, 94, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: var(--text);
+
+  background:
+    radial-gradient(900px 500px at 20% 15%, rgba(56, 189, 248, 0.20), transparent 60%),
+    radial-gradient(900px 500px at 80% 25%, rgba(168, 85, 247, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 50% 85%, rgba(34, 197, 94, 0.10), transparent 60%),
+    var(--bg);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 18px;
+  background: rgba(11, 16, 36, 0.80);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.10);
+}
+
+.logo {
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+}
+
+.links a {
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.92;
+
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.links a:hover {
+  opacity: 1;
+  border-color: rgba(226, 232, 240, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  min-height: calc(100vh - 60px); 
+  display: grid;
+  place-items: center;
+  padding: 24px 16px 40px;
+}
+
+.card {
+  width: 100%;
+  max-width: 640px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+
+  box-shadow: 0 22px 70px var(--shadow);
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.hero {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+
+  border-radius: 14px;
+  margin: 14px 0;
+
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+.timerBox {
+  margin-top: 6px;
+  display: grid;
+  gap: 12px;
+
+  padding: 14px;
+  border-radius: 16px;
+
+  background: rgba(2, 6, 23, 0.25);
+  border: 1px solid rgba(226, 232, 240, 0.10);
+}
+
+.time {
+  font-size: 64px;
+  font-weight: 950;
+  text-align: center;
+
+  padding: 14px 10px;
+  border-radius: 14px;
+
+  background: var(--panel);
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  letter-spacing: 1px;
+}
+
+.time.done {
+  outline: 2px solid rgba(34, 197, 94, 0.6);
+}
+
+.label {
+  display: grid;
+  gap: 6px;
+  max-width: 260px;
+  font-weight: 800;
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(226, 232, 240, 0.18);
+  background: var(--panel);
+
+  color: var(--text);
+  outline: none;
+}
+
+input:focus {
+  border-color: rgba(56, 189, 248, 0.75);
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  border: none;
+  cursor: pointer;
+
+  font-weight: 900;
+  background: var(--primary);
+  color: #07101f;
+
+  transition: transform 0.06s ease, opacity 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(226, 232, 240, 0.18);
+}
+
+.finishMsg {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--successBg);
+  border: 1px solid var(--successBorder);
+}
+
+.tips {
+  margin-top: 16px;
+}
+
+.tips h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.tips ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.box {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 14px;
+
+  background: rgba(2, 6, 23, 0.25);
+  border: 1px solid rgba(226, 232, 240, 0.10);
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .hero {
+    height: 160px;
+  }
+
+  .time {
+    font-size: 48px;
+  }
+}
+
