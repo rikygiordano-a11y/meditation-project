@@ -1,23 +1,19 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/home";
+import About from "./pages/about";
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
-      <header className="nav">
-        <div className="logo">🧘 Meditation</div>
-        <nav className="links">
-          <Link to="/">Timer</Link>
-          <Link to="/about">Info</Link>
-        </nav>
-      </header>
-
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default App;

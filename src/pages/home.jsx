@@ -1,32 +1,26 @@
-import Timer from "../components/Timer.jsx";
+import meditationImage from "../assets/meditation.jpg";
+import PageLayout from "../components/PageLayout";
+import Timer from "../components/Timer";
 
-export default function Home() {
+function Home() {
   return (
-    <main className="container">
-      <section className="card">
-        <h1>Meditation Timer</h1>
-        <p className="subtitle">
-          Imposta i minuti, premi Start e concentrati sul respiro.
-        </p>
+    <PageLayout title="Meditation Timer">
 
-        {/* immagine semplice (non serve API) */}
-        <img
-          className="hero"
-          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=60"
-          alt="Meditation"
-        />
+      <img
+        src={meditationImage}
+        alt="Meditation"
+        style={{ width: "100%", borderRadius: "10px", marginBottom: "20px" }}
+      />
 
-        <Timer />
+      <p>
+        La meditazione è una pratica che aiuta a rilassare la mente
+        e migliorare la concentrazione.
+      </p>
 
-        <div className="tips">
-          <h2>Consigli veloci</h2>
-          <ul>
-            <li>Siediti comodo e rilassa le spalle.</li>
-            <li>Inspira dal naso, espira lentamente.</li>
-            <li>Se ti distrai, torna al respiro. È normale.</li>
-          </ul>
-        </div>
-      </section>
-    </main>
+      <Timer />
+
+    </PageLayout>
   );
 }
+
+export default Home;
